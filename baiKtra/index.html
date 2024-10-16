@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Khóa Học</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>ĐĂNG KÝ THAM GIA KHÓA HỌC</h2>
+        <form id="registrationForm" onsubmit="return false;">
+            <!-- Họ và Tên -->
+            <label for="fullName">Họ và Tên:</label>
+            <input type="text" id="fullName" maxlength="100" required placeholder="Trần Văn Thái">
+            <span id="nameError" class="error-message"></span>
+
+            <!-- Địa chỉ -->
+            <label for="address">Địa chỉ:</label>
+            <input type="text" id="address" maxlength="255" required placeholder="259/6 phú diễn">
+            <span id="addressError" class="error-message"></span>
+
+            <!-- Số điện thoại -->
+            <label for="phoneNumber">Số Điện Thoại:</label>
+            <input type="text" id="phoneNumber" required placeholder="0899 829 840">
+            <span id="phoneError" class="error-message"></span>
+
+            <!-- Số CCCD -->
+            <label for="cccd">Số CCCD:</label>
+            <input type="text" id="cccd" required placeholder="035202000534">
+            <span id="cccdError" class="error-message"></span>
+
+            <!-- Khóa học -->
+            <label for="course">Khóa Học:</label>
+            <select id="course" required>
+                <option value="">Chọn Khóa Học</option>
+                <option value="Lập Trình Web">Lập Trình Web</option>
+                <option value="Thiết Kế Đồ Họa">Thiết Kế Đồ Họa</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+            </select>
+            <span id="courseError" class="error-message"></span>
+
+            <!-- Giới tính -->
+            <label>Giới Tính:</label>
+            <input type="radio" name="gender" value="Nam" required> Nam
+            <input type="radio" name="gender" value="Nữ" required> Nữ
+            <span id="genderError" class="error-message"></span>
+
+            <!-- Đối tượng ưu tiên -->
+            <label for="priority">Đối Tượng Ưu Tiên:</label>
+            <input type="checkbox" id="priority"> Ưu Tiên
+
+            <!-- Tuổi -->
+            <label for="age">Tuổi:</label>
+            <input type="number" id="age" min="0" max="150" required placeholder="22">
+            <span id="ageError" class="error-message"></span>
+
+            <!-- Học phí -->
+            <label for="fee">Học Phí:</label>
+            <input type="text" id="fee" readonly placeholder="Học Phí sẽ hiển thị ở đây">
+
+            <!-- Các nút hành động -->
+            <button type="button" onclick="calculateFee()">Tính Học Phí</button>
+            <button type="reset" onclick="resetForm()">Làm Mới</button>
+            <button type="button" onclick="exitForm()">Thoát</button>
+        </form>
+    </div>
+</body>
+</html>
